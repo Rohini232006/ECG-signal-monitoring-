@@ -1,0 +1,13 @@
+// Pin configuration
+int ECGSignal = A0;  // Output of AD8232 ECG sensor
+
+void setup() {
+  Serial.begin(9600);
+  Serial.println("ECG Signal Monitoring");
+}
+
+void loop() {
+  int signal = analogRead(ECGSignal);  // Read ECG analog signal
+  Serial.println(signal);              // Send to Serial Plotter
+  delay(2);                            // Small delay for stable reading
+}
